@@ -133,21 +133,38 @@ export const GamePageListCardBgContainer = styled.ul`
     props.isDarkModeEnabled ? '#000000' : '#f8fafc'};
   font-family: 'Roboto';
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
 `
 
 export const GamePageListCard = styled.li`
   width: 100%;
+  max-width: 300px;
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+   background-color: ${props =>
+     props.isDarkModeEnabled ? '#181818' : '#f1f1f1'};
+  border-radius: 8px;
   list-style-type: none;
-  padding: 10px 10px 10px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+`
+
+export const GamePageListCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
 `
 
 export const GamePageListCardLogo = styled.img`
-  width: 100%;
+  width: 50%;
+  hieght: 450px;
   border-radius: 8px;
-  margin: 0px 0px 0px 0px;
 `
 
 export const GamePageListCardHeading = styled.h1`

@@ -1,4 +1,3 @@
-
 import {Component} from 'react'
 
 import Cookies from 'js-cookie'
@@ -242,4 +241,3 @@ class HomeRoute extends Component {
 }
 
 export default HomeRoute
-

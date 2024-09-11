@@ -169,4 +169,3 @@ class LoginRoute extends Component {
 }
 
 export default LoginRoute
-

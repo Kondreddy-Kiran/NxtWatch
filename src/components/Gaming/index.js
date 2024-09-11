@@ -16,6 +16,7 @@ import NxtWatchAppContext from '../../Context/NxtWatchAppContext'
 
 import {
   GameRouteBgContainer,
+  GamePageListCardContainer,
   GameRouteMainCard,
   GameRouteDisplayCard,
   GameRouteHeaderCard,
@@ -123,18 +124,20 @@ class GamingRoute extends Component {
                   className="game-page-link-item"
                 >
                   <GamePageListCard isDarkModeEnabled={isDarkModeEnabled}>
-                    <GamePageListCardLogo
-                      src={eachitem.thumbnailUrl}
-                      alt="video thumbnail"
-                    />
-                    <GamePageListCardHeading
-                      isDarkModeEnabled={isDarkModeEnabled}
-                    >
-                      {eachitem.title}
-                    </GamePageListCardHeading>
-                    <GamePageListCardDescription>
-                      {eachitem.viewCount} Watching Worldwide
-                    </GamePageListCardDescription>
+                    <GamePageListCardContainer>
+                      <GamePageListCardLogo
+                        src={eachitem.thumbnailUrl}
+                        alt="video thumbnail"
+                      />
+                      <GamePageListCardHeading
+                        isDarkModeEnabled={isDarkModeEnabled}
+                      >
+                        {eachitem.title}
+                      </GamePageListCardHeading>
+                      <GamePageListCardDescription>
+                        {eachitem.viewCount} Watching Worldwide
+                      </GamePageListCardDescription>
+                    </GamePageListCardContainer>
                   </GamePageListCard>
                 </Link>
               ))}

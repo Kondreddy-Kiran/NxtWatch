@@ -143,7 +143,7 @@ export const PopupLogoutButton = styled.button`
   font-weight: 500;
   border: none;
   margin: 0px 10px 0px 10px;
-  background-color: #4f46e5;
+  background-color: #3b82f6;
   border-radius: 8px;
   font-family: 'Roboto';
   padding: 9px 17px 9px 17px;

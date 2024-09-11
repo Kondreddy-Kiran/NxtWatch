@@ -122,7 +122,7 @@ class Navbar extends Component {
                               type="button"
                               onClick={this.onClickLogout}
                             >
-                              Logout
+                              Confirm
                             </PopupLogoutButton>
                           </PopupButtonsContainer>
                         </PopupContentCard>
@@ -192,7 +192,7 @@ class Navbar extends Component {
                             type="button"
                             onClick={this.onClickLogout}
                           >
-                            Logout
+                            Confirm
                           </PopupLogoutButton>
                         </PopupButtonsContainer>
                       </PopupContentCard>
