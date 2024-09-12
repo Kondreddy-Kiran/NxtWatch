@@ -12,7 +12,6 @@ import {
   NotFoundImage,
   NotFoundHeading,
   NotFoundDescription,
-  NotFoundButton,
 } from './styledComponent'
 
 class NotFoundRoute extends Component {
@@ -58,9 +57,6 @@ class NotFoundRoute extends Component {
                     <NotFoundDescription isDarkModeEnabled={isDarkModeEnabled}>
                       We are sorry, the page you requested could not be found.
                     </NotFoundDescription>
-                    <NotFoundButton type="button" onClick={this.navigateToHome}>
-                      Navigate To Home
-                    </NotFoundButton>
                   </NotFoundBgContainer>
                 )}
               </NotFoundDisplayCard>

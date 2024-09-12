@@ -76,12 +76,23 @@ class Navbar extends Component {
                     <FiMenu />
                   </NavbarMenuButton>
 
+                  <NavbarContentCard>
+                    <NavbarProfileCard
+                      src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
+                      alt="profile"
+                    />
+                  </NavbarContentCard>
+
                   {/* Logout Popup */}
                   <Popup
                     modal
                     trigger={
-                      <NavbarLogoutButton type="button">
-                        <FiLogOut />
+                      <NavbarLogoutButton
+                        type="button"
+                        className="logout-button"
+                      >
+                        <FiLogOut className="logout-icon" />
+                        <span className="logout-text">Logout</span>
                       </NavbarLogoutButton>
                     }
                   >
@@ -113,14 +124,6 @@ class Navbar extends Component {
               {showMobileMenu && (
                 <MobileNavbarMenuCard isDarkModeEnabled={isDarkModeEnabled} />
               )}
-
-              {/* Profile and Logout */}
-              <NavbarContentCard>
-                <NavbarProfileCard
-                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
-                  alt="profile"
-                />
-              </NavbarContentCard>
             </NavbarBgContainer>
           )
         }}
