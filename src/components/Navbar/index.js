@@ -1,40 +1,27 @@
 import {Component} from 'react'
-
 import {Link, withRouter} from 'react-router-dom'
-
 import Popup from 'reactjs-popup'
-
 import Cookies from 'js-cookie'
-
 import {FaMoon} from 'react-icons/fa'
-
 import {FiMenu, FiSun, FiLogOut} from 'react-icons/fi'
-
 import NxtWatchAppContext from '../../Context/NxtWatchAppContext'
-
-import MobileNavbarMenuCard from '../MobileNavbarMenuCard'
-
 import {
-  MobileNavbarBgContainer,
-  MobileNavbarHeaderCard,
-  MobileNavbarHeaderLogoCard,
-  MobileNavbarHeaderContentCard,
-  MobileNavbarThemeSwitcherButton,
-  MobileNavbarMenuButton,
-  MobileNavbarLogoutButton,
+  NavbarBgContainer,
+  NavbarHeaderCard,
+  NavbarHeaderLogoCard,
+  NavbarHeaderContentCard,
+  NavbarThemeSwitcherButton,
+  NavbarMenuButton,
+  NavbarLogoutButton,
+  NavbarProfileCard,
+  NavbarContentCard,
   PopupContentCard,
   PopupText,
   PopupButtonsContainer,
   PopupCancelButton,
   PopupLogoutButton,
-  DesktopNavbar,
-  DesktopNavbarHeaderCard,
-  DesktopNavbarLogo,
-  DesktopNavbarContentCard,
-  DesktopNavbarThemeSwitcherButton,
-  DesktopNavbarProfileCard,
-  DesktopNavbarLogoutButton,
 } from './styledComponent'
+import MobileNavbarMenuCard from '../MobileNavbarMenuCard'
 
 class Navbar extends Component {
   state = {
@@ -58,137 +45,58 @@ class Navbar extends Component {
       <NxtWatchAppContext.Consumer>
         {value => {
           const {isDarkModeEnabled, onToggleDarkMode} = value
+          const logoUrl = isDarkModeEnabled
+            ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
+            : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
+
           return (
-            <>
-              <MobileNavbarBgContainer
-                isDarkModeEnabled={isDarkModeEnabled}
-                data-testid="mobileNavbar"
-              >
-                <MobileNavbarHeaderCard isDarkModeEnabled={isDarkModeEnabled}>
-                  <Link to="/" style={{textDecoration: 'none'}}>
-                    <MobileNavbarHeaderLogoCard
-                      src={
-                        isDarkModeEnabled
-                          ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
-                          : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
-                      }
-                      alt="website logo"
-                    />
-                  </Link>
-                  <MobileNavbarHeaderContentCard
-                    isDarkModeEnabled={isDarkModeEnabled}
-                  >
-                    <MobileNavbarThemeSwitcherButton
-                      type="button"
-                      data-testid="theme"
-                      onClick={onToggleDarkMode}
-                      isDarkModeEnabled={isDarkModeEnabled}
-                    >
-                      {!isDarkModeEnabled ? <FaMoon /> : <FiSun />}
-                    </MobileNavbarThemeSwitcherButton>
-                    <MobileNavbarMenuButton
-                      type="button"
-                      isDarkModeEnabled={isDarkModeEnabled}
-                      onClick={this.onToggleMobileMenuCard}
-                    >
-                      <FiMenu />
-                    </MobileNavbarMenuButton>
-                    <Popup
-                      modal
-                      trigger={
-                        <MobileNavbarLogoutButton
-                          type="button"
-                          isDarkModeEnabled={isDarkModeEnabled}
-                        >
-                          <FiLogOut />
-                        </MobileNavbarLogoutButton>
-                      }
-                    >
-                      {close => (
-                        <PopupContentCard isDarkModeEnabled={isDarkModeEnabled}>
-                          <PopupText isDarkModeEnabled={isDarkModeEnabled}>
-                            Are you sure, you want to logout?
-                          </PopupText>
-                          <PopupButtonsContainer>
-                            <PopupCancelButton
-                              isDarkModeEnabled={isDarkModeEnabled}
-                              type="button"
-                              onClick={() => close()}
-                            >
-                              Cancel
-                            </PopupCancelButton>
-                            <PopupLogoutButton
-                              isDarkModeEnabled={isDarkModeEnabled}
-                              type="button"
-                              onClick={this.onClickLogout}
-                            >
-                              Confirm
-                            </PopupLogoutButton>
-                          </PopupButtonsContainer>
-                        </PopupContentCard>
-                      )}
-                    </Popup>
-                  </MobileNavbarHeaderContentCard>
-                </MobileNavbarHeaderCard>
-                {showMobileMenu && (
-                  <MobileNavbarMenuCard isDarkModeEnabled={isDarkModeEnabled} />
-                )}
-              </MobileNavbarBgContainer>
-              <DesktopNavbar
-                isDarkModeEnabled={isDarkModeEnabled}
-                id="desktopNavbar"
-              >
-                <DesktopNavbarHeaderCard>
-                  <Link to="/" style={{textDecoration: 'none'}}>
-                    <DesktopNavbarLogo
-                      src={
-                        isDarkModeEnabled
-                          ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
-                          : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
-                      }
-                      alt="website logo"
-                    />
-                  </Link>
-                </DesktopNavbarHeaderCard>
-                <DesktopNavbarContentCard isDarkModeEnabled={isDarkModeEnabled}>
-                  <DesktopNavbarThemeSwitcherButton
+            <NavbarBgContainer isDarkModeEnabled={isDarkModeEnabled}>
+              {/* Header */}
+              <NavbarHeaderCard>
+                <Link to="/">
+                  <NavbarHeaderLogoCard src={logoUrl} alt="website logo" />
+                </Link>
+
+                <NavbarHeaderContentCard>
+                  {/* Dark Mode Toggle Button */}
+                  <NavbarThemeSwitcherButton
                     type="button"
                     data-testid="theme"
                     onClick={onToggleDarkMode}
                     isDarkModeEnabled={isDarkModeEnabled}
                   >
-                    {!isDarkModeEnabled ? <FaMoon /> : <FiSun />}
-                  </DesktopNavbarThemeSwitcherButton>
-                  <DesktopNavbarProfileCard
-                    src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
-                    alt="profile"
-                  />
+                    {isDarkModeEnabled ? <FiSun /> : <FaMoon />}
+                  </NavbarThemeSwitcherButton>
+
+                  {/* Mobile Menu Toggle */}
+                  <NavbarMenuButton
+                    type="button"
+                    onClick={this.onToggleMobileMenuCard}
+                  >
+                    <FiMenu />
+                  </NavbarMenuButton>
+
+                  {/* Logout Popup */}
                   <Popup
                     modal
                     trigger={
-                      <DesktopNavbarLogoutButton
-                        type="button"
-                        isDarkModeEnabled={isDarkModeEnabled}
-                      >
-                        Logout
-                      </DesktopNavbarLogoutButton>
+                      <NavbarLogoutButton type="button">
+                        <FiLogOut />
+                      </NavbarLogoutButton>
                     }
                   >
                     {close => (
                       <PopupContentCard isDarkModeEnabled={isDarkModeEnabled}>
-                        <PopupText isDarkModeEnabled={isDarkModeEnabled}>
-                          Are you sure, you want to logout?
-                        </PopupText>
+                        <PopupText>Are you sure, you want to logout?</PopupText>
                         <PopupButtonsContainer>
                           <PopupCancelButton
-                            isDarkModeEnabled={isDarkModeEnabled}
                             type="button"
                             onClick={() => close()}
+                            isDarkModeEnabled={isDarkModeEnabled}
                           >
                             Cancel
                           </PopupCancelButton>
                           <PopupLogoutButton
-                            isDarkModeEnabled={isDarkModeEnabled}
                             type="button"
                             onClick={this.onClickLogout}
                           >
@@ -198,9 +106,22 @@ class Navbar extends Component {
                       </PopupContentCard>
                     )}
                   </Popup>
-                </DesktopNavbarContentCard>
-              </DesktopNavbar>
-            </>
+                </NavbarHeaderContentCard>
+              </NavbarHeaderCard>
+
+              {/* Mobile Menu */}
+              {showMobileMenu && (
+                <MobileNavbarMenuCard isDarkModeEnabled={isDarkModeEnabled} />
+              )}
+
+              {/* Profile and Logout */}
+              <NavbarContentCard>
+                <NavbarProfileCard
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
+                  alt="profile"
+                />
+              </NavbarContentCard>
+            </NavbarBgContainer>
           )
         }}
       </NxtWatchAppContext.Consumer>

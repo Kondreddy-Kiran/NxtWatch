@@ -119,6 +119,7 @@ class GamingRoute extends Component {
             <GamePageListCardBgContainer isDarkModeEnabled={isDarkModeEnabled}>
               {gamingRouteVideosList.map(eachitem => (
                 <Link
+                  style={{textDecoration: 'none'}}
                   key={eachitem.id}
                   to={`/videos/${eachitem.id}`}
                   className="game-page-link-item"
