@@ -1,8 +1,6 @@
-
-
 import {Component} from 'react'
 
-import ReactPlayer from 'react-player/lazy'
+import ReactPlayer from 'react-player'
 
 import {formatDistanceToNow} from 'date-fns'
 
@@ -383,4 +381,3 @@ class VideoItemDetailsRoute extends Component {
 }
 
 export default VideoItemDetailsRoute
-

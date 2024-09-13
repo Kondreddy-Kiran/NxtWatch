@@ -214,7 +214,7 @@ class HomeRoute extends Component {
               <Navbar />
               <HomeRouteBgContainer
                 isDarkModeEnabled={isDarkModeEnabled}
-                data-testid="homeRoute"
+                data-testid="home"
               >
                 <AppSidebar />
                 <HomeRouteDisplayCard

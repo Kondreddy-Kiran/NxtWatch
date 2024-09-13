@@ -56,37 +56,41 @@ export const NavbarProfileCard = styled.img`
 // NavbarLogoutButton (Logout button)
 export const NavbarLogoutButton = styled.button`
   background-color: transparent;
-  border: 1px solid ${props =>
-    props.isDarkModeEnabled ? '#ffffff' : '#000000'};
-  color: ${props => (props.isDarkModeEnabled ? '#ffffff' : '#000000')};
-  font-size: 16px;
+  border: none;
   padding: 8px 16px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  border-radius: 4px;
   position: relative;
 
-  .logout-text {
-    display: none; /* Hide text on small screens */
-  }
-
+  /* Icon styling */
   .logout-icon {
-    display: inline; /* Show icon on small screens */
-    margin-right: 8px;
+    display: block; /* Show icon on all screens */
+    font-size: 24px;
   }
 
-  @media screen and (min-width: 768px) {
-    .logout-text {
-      display: inline; /* Show text on medium and large screens */
-    }
-
-    .logout-icon {
-      display: none; /* Hide icon on medium and large screens */
-    }
-  }
+  /* For mobile screens */
   @media screen and (max-width: 767px) {
-      border:none;
+    border: none;
+    padding: 0; /* Remove border and padding on mobile */
+  }
+
+  /* For medium and larger screens */
+  @media screen and (min-width: 768px) {
+    border: 1px solid ${props =>
+      props.isDarkModeEnabled ? '#ffffff' : '#000000'};
+    color: ${props => (props.isDarkModeEnabled ? '#ffffff' : '#000000')};
+
+    /* Hide the logout icon on medium and large screens */
+    .logout-icon {
+      display: none;
+    }
+
+    /* Show the logout text on larger screens */
+    &::after {
+      content: 'Logout';
+      margin-left: 8px; /* Space between icon and text */
+      display: inline-block;
     }
   }
 `
@@ -132,7 +136,6 @@ export const PopupText = styled.p`
   font-size: 18px;
   color: ${props => (props.isDarkModeEnabled ? '#ffffff' : '#000000')};
 `
-export const FiLogOut = styled
 
 // PopupButtonsContainer (Buttons container in popup)
 export const PopupButtonsContainer = styled.div`

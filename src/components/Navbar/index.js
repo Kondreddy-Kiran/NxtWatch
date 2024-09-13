@@ -87,12 +87,8 @@ class Navbar extends Component {
                   <Popup
                     modal
                     trigger={
-                      <NavbarLogoutButton
-                        type="button"
-                        className="logout-button"
-                      >
+                      <NavbarLogoutButton type="button">
                         <FiLogOut className="logout-icon" />
-                        <span className="logout-text">Logout</span>
                       </NavbarLogoutButton>
                     }
                   >
