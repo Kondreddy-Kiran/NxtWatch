@@ -69,6 +69,10 @@ export const NavbarLogoutButton = styled.button`
     font-size: 24px;
   }
 
+  .logout-text {
+    display: none; /* Hide text by default */
+  }
+
   /* For mobile screens */
   @media screen and (max-width: 767px) {
     border: none;
@@ -87,10 +91,9 @@ export const NavbarLogoutButton = styled.button`
     }
 
     /* Show the logout text on larger screens */
-    &::after {
-      content: 'Logout';
+    .logout-text {
+      display: inline; /* Show text on medium and large screens */
       margin-left: 8px; /* Space between icon and text */
-      display: inline-block;
     }
   }
 `

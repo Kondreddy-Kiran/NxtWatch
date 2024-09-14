@@ -89,6 +89,7 @@ class Navbar extends Component {
                     trigger={
                       <NavbarLogoutButton type="button">
                         <FiLogOut className="logout-icon" />
+                        <span className="logout-text">Logout</span>
                       </NavbarLogoutButton>
                     }
                   >

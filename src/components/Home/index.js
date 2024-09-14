@@ -1,17 +1,12 @@
 import {Component} from 'react'
-
 import Cookies from 'js-cookie'
-
 import {BsSearch} from 'react-icons/bs'
-
 import NxtWatchPremiumCard from '../NxtWatchPremiumCard'
 import LoaderCard from '../LoaderCard'
 import Navbar from '../Navbar'
 import AppSidebar from '../Sidebar'
 import VideoCard from '../TrendingVideoItem'
-
 import NxtWatchAppContext from '../../Context/NxtWatchAppContext'
-
 import {
   HomeRouteBgContainer,
   HomeRouteDisplayCard,
@@ -23,7 +18,6 @@ import {
   HomePageErrorCardDescription,
   HomePageErrorCardButton,
 } from './styledComponent'
-
 import './index.css'
 
 const homePageApiConstants = {
@@ -112,6 +106,7 @@ class HomeRoute extends Component {
                 <button
                   className="search-button"
                   type="button"
+                  data-testid="searchButton"
                   onClick={this.getHomePageList}
                 >
                   <BsSearch />
@@ -218,8 +213,9 @@ class HomeRoute extends Component {
               >
                 <AppSidebar />
                 <HomeRouteDisplayCard
-                  idDarkModeEnabled={isDarkModeEnabled}
+                  isDarkModeEnabled={isDarkModeEnabled}
                   isPremiumCardActive={isPremiumCardActive}
+                  data-testid="banner"
                 >
                   {isPremiumCardActive && (
                     <NxtWatchPremiumCard

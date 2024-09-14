@@ -23,6 +23,7 @@ const NxtWatchPremiumCard = props => {
         />
         <NxtWatchPremiumCardDeleteButton
           type="button"
+          data-testid="close"
           onClick={onTogglePremiumCardDisplay}
         >
           <TiDelete />
@@ -39,4 +40,3 @@ const NxtWatchPremiumCard = props => {
 }
 
 export default NxtWatchPremiumCard
-

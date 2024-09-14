@@ -127,4 +127,3 @@ const PlayVideoView = props => {
 }
 
 export default PlayVideoView
-

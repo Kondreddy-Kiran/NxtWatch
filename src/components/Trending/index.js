@@ -163,4 +163,3 @@ class TrendingRoute extends Component {
 }
 
 export default TrendingRoute
-

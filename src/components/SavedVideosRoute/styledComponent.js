@@ -100,7 +100,7 @@ export const NoSavedVideosHeading = styled.h1`
   padding: 0px 15px 30px 15px;
   font-family: 'Roboto';
   font-size: 20px;
-  @media screen and (min-width: 768xp) {
+  @media screen and (min-width: 768px) {
     font-size: 25px;
   }
 `
@@ -112,7 +112,7 @@ export const NoSavedVideosDescription = styled.p`
   padding: 0px 15px 30px 15px;
   font-family: 'Roboto';
   font-size: 16px;
-  @media screen and (min-width: 768xp) {
+  @media screen and (min-width: 768px) {
     font-size: 18px;
   }
 `
@@ -127,4 +127,50 @@ export const NoSavedVideosButton = styled.button`
   outline: none;
   font-size: 16px;
   border-radius: 8px;
+`
+
+// New styled components for video cards
+export const SavedVideoCard = styled.li`
+  display: flex;
+  margin: 20px;
+  cursor: pointer;
+  background-color: ${props =>
+    props.isDarkModeEnabled ? '#181818' : '#ffffff'};
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`
+
+export const SavedVideoThumbnail = styled.img`
+  width: 200px;
+  height: 120px;
+`
+
+export const SavedVideoDetailsContainer = styled.div`
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+`
+
+export const SavedVideoTitle = styled.p`
+  font-size: 16px;
+  font-weight: 500;
+  color: ${props => (props.isDarkModeEnabled ? '#ffffff' : '#000000')};
+  margin-bottom: 5px;
+`
+
+export const SavedVideoChannelName = styled.p`
+  font-size: 14px;
+  color: ${props => (props.isDarkModeEnabled ? '#cccccc' : '#7e858e')};
+  margin-bottom: 5px;
+`
+
+export const SavedVideoStats = styled.p`
+  font-size: 12px;
+  color: ${props => (props.isDarkModeEnabled ? '#cccccc' : '#7e858e')};
 `

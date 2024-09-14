@@ -1,5 +1,3 @@
-
-
 import {Link} from 'react-router-dom'
 
 import {formatDistanceToNow} from 'date-fns'
@@ -75,4 +73,3 @@ const VideoCard = props => {
 }
 
 export default VideoCard
-

@@ -20,6 +20,9 @@ export const HomeRouteDisplayCard = styled.div`
     props.isPremiumCardActive ? '0px 0px 30px 0px' : '10px 10px 30px 10px'};
   width: 100%;
   overflow-y: auto;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png'); /* Replace with the provided background image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
   @media screen and (min-width: 768px) {
     width: 75%;
     flex-grow: 1;
@@ -27,11 +30,14 @@ export const HomeRouteDisplayCard = styled.div`
   }
 `
 
+export const NavbarHeaderLogoCard = styled.img`
+  width: 150px;
+`
 export const HomePageVideosCard = styled.ul`
   width: 100%;
   list-style-type: none;
-  padding: 0px 0px 0px 0px;
-  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  margin: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,11 +53,10 @@ export const HomePageVideosCard = styled.ul`
 
 export const HomePageMainDisplayCard = styled.div`
   width: 100%;
-  background-color: #f8fafc;
-  display: flex;
-  flex-direction: column;
   background-color: ${props =>
     props.isDarkModeEnabled ? '#000000' : '#f8fafc'};
+  display: flex;
+  flex-direction: column;
 `
 
 export const HomePageErrorCard = styled.div`
@@ -77,7 +82,7 @@ export const HomePageErrorCardHeading = styled.h1`
   font-size: 20px;
   font-family: 'Roboto';
   text-align: center;
-  margin: 0px 0px 0px 0px;
+  margin: 0px;
   padding: 25px 0px 20px 0px;
   @media screen and (min-width: 768px) {
     font-size: 25px;
@@ -89,7 +94,7 @@ export const HomePageErrorCardDescription = styled.p`
   font-size: 16px;
   text-align: center;
   font-family: 'Roboto';
-  margin: 0px 0px 0px 0px;
+  margin: 0px;
   padding: 0px 0px 20px 0px;
   @media screen and (min-width: 768px) {
     font-size: 18px;
@@ -97,8 +102,8 @@ export const HomePageErrorCardDescription = styled.p`
 `
 
 export const HomePageErrorCardButton = styled.button`
-  padding: 9px 16px 9px 16px;
-  margin: 0px 0px 0px 0px;
+  padding: 9px 16px;
+  margin: 0px;
   border: none;
   background-color: #4f46e5;
   color: #ffffff;
@@ -108,4 +113,3 @@ export const HomePageErrorCardButton = styled.button`
   font-size: 16px;
   border-radius: 8px;
 `
-
